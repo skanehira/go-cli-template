@@ -7,7 +7,12 @@ GOBIN ?= $(shell go env GOPATH)/bin
 export GO111MODULE=on
 
 .PHONY: init
-	grep -r -l go-cli-template * | xargs sed -i "" "s/go-cli-template/$(basename `git rev-parse --show-toplevel`)/"
+init:
+ifeq ($(shell uname -s),Darwin)
+	@grep -r -l go-cli-template * | xargs sed -i "" "s/go-cli-template/$$(basename `git rev-parse --show-toplevel`)/"
+else
+	@grep -r -l go-cli-template * | xargs sed -i "s/go-cli-template/$$(basename `git rev-parse --show-toplevel`)/"
+endif
 
 .PHONY: all
 all: clean build
