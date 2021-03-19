@@ -22,10 +22,6 @@ jobs:
     - name: Cross build
       run: make cross
     - name: Create Release
-      uses: softprops/action-gh-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload
       run: make upload
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

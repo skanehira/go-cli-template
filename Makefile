@@ -42,7 +42,7 @@ clean:
 
 .PHONY: upload
 upload: $(GOBIN)/ghr
-	ghr "v$(VERSION)" goxz
+	ghr "$(VERSION)" goxz
 
 $(GOBIN)/ghr:
 	cd && go get github.com/tcnksm/ghr
