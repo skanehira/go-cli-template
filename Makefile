@@ -1,9 +1,6 @@
 BIN := go-cli-template
-VERSION := $$(make -s show-version)
-VERSION_PATH := .
 CURRENT_REVISION := $(shell git rev-parse --short HEAD)
 BUILD_LDFLAGS := "-s -w -X github.com/skanehira/go-cli-template/cmd.Revision=$(CURRENT_REVISION)"
-GOBIN ?= $(shell go env GOPATH)/bin
 export GO111MODULE=on
 
 .PHONY: init
@@ -25,30 +22,11 @@ build:
 install:
 	go install -ldflags=$(BUILD_LDFLAGS) ./...
 
-.PHONY: show-version
-show-version:
-	@git describe --tags --abbrev=0
-
-.PHONY: cross
-cross: $(GOBIN)/goxz
-	goxz -n $(BIN) -pv=$(VERSION) -build-ldflags=$(BUILD_LDFLAGS) .
-
-$(GOBIN)/goxz:
-	cd && go get github.com/Songmu/goxz/cmd/goxz
-
 .PHONY: test
 test: build
 	go test -v ./...
 
 .PHONY: clean
 clean:
-	rm -rf $(BIN) goxz
+	rm -rf $(BIN)
 	go clean
-
-.PHONY: upload
-upload: $(GOBIN)/ghr
-	ghr "$(VERSION)" goxz
-
-$(GOBIN)/ghr:
-	cd && go get github.com/tcnksm/ghr
-
