@@ -16,12 +16,10 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.16.x
-    - name: Add $GOPATH/bin to $PATH
-      # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#adding-a-system-path
-      run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
-    - name: Cross build
-      run: make cross
-    - name: Create Release
-      run: make upload
+    - name: Run GoReleaser
+      uses: goreleaser/goreleaser-action@v2
+      with:
+        version: latest
+        args: release --rm-dist
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
