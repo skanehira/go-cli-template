@@ -1,0 +1,12 @@
+project_name: go-cli-template
+env:
+  - GO111MODULE=on
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: .
+    ldflags:
+      - -s -w
+      - -X github.com/skanehira/go-cli-template/cmd.Version={{.Version}}
+      - -X github.com/skanehira/go-cli-template/cmd.Revision={{.ShortCommit}}

@@ -9,15 +9,17 @@ import (
 
 var (
 	Revision = "dev"
+	Version  = "dev"
 )
 
 var versionCmd = &cobra.Command{
 	Use: "version",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf(`Revision: %s
+		fmt.Printf(`Version: %s
+Revision: %s
 OS: %s
 Arch: %s
-`, Revision, runtime.GOOS, runtime.GOARCH)
+`, Version, Revision, runtime.GOOS, runtime.GOARCH)
 	},
 }
 
