@@ -21,3 +21,7 @@ builds:
       - -s -w
       - -X github.com/skanehira/go-cli-template/cmd.Version={{.Version}}
       - -X github.com/skanehira/go-cli-template/cmd.Revision={{.ShortCommit}}
+    goos:
+      - linux
+      - windows
+      - darwin
