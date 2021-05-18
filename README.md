@@ -16,6 +16,7 @@ This repository is contains following.
   - go test
   - goreleaser
   - dependabot for github-actions and Go
+  - CodeQL Analysis (Go)
 
 ## How to use
 1. fork this repository
