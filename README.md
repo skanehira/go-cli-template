@@ -15,7 +15,7 @@ This repository is contains following.
   - golangci-lint
   - go test
   - goreleaser
-  - dependabot for githu-actions and Go
+  - dependabot for github-actions and Go
 
 ## How to use
 1. fork this repository
