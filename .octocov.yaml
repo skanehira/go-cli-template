@@ -1,0 +1,11 @@
+coverage:
+  path: coverage.out
+codeToTestRatio:
+  code:
+    - '**/*.go'
+    - '!**/*_test.go'
+  test:
+    - '**/*_test.go'
+comment:
+  enable: true
+

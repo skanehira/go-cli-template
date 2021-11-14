@@ -66,5 +66,6 @@ jobs:
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-
-      - name: go test
-        run: go test -v ./...
+      - name: Run tests with coverage report output
+        uses: k1LoW/octocov-action@v0
+        run: go test ./... -coverprofile=coverage.out  
