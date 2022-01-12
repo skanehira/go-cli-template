@@ -16,8 +16,7 @@ func getVersion() string {
 	return fmt.Sprintf(`Version: %s
 Revision: %s
 OS: %s
-Arch: %s
-`, Version, Revision, runtime.GOOS, runtime.GOARCH)
+Arch: %s`, Version, Revision, runtime.GOOS, runtime.GOARCH)
 }
 
 var versionCmd = &cobra.Command{
