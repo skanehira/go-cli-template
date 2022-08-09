@@ -51,4 +51,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-go-
       - name: go test
-        run: go test -v ./...
+        run: go test -v ./... -coverprofile=coverage.out
+      - uses: k1LoW/octocov-action@v0
+        if: runner.os == 'Linux'
