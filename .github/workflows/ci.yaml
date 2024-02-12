@@ -12,7 +12,7 @@ jobs:
   lint:
     strategy:
       matrix:
-        go-version: [1.19.x]
+        go-version: [1.x]
         os: [
           # NOTE: ignore windows because it will be timeout
           #windows-latest,
@@ -30,7 +30,7 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v4
         with:
-          version: v1.51.2
+          version: v1.54
       - name: go vet
         run: go vet ./...
       - name: go build
@@ -38,7 +38,7 @@ jobs:
   test:
     strategy:
       matrix:
-        go-version: [1.19.x]
+        go-version: [1.x]
         os: [windows-latest, macos-latest, ubuntu-latest]
     name: test
     runs-on: ${{ matrix.os }}
