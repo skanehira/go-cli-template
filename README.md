@@ -2,8 +2,8 @@
 ![GitHub](https://img.shields.io/github/license/skanehira/go-cli-template)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/skanehira/go-cli-template)
 ![GitHub all releases](https://img.shields.io/github/downloads/skanehira/go-cli-template/total)
-![GitHub CI Status](https://img.shields.io/github/actions/workflow/status/skanehira/go-cli-template/ci.yaml?branch=main)
-![GitHub Release Status](https://img.shields.io/github/actions/workflow/status/skanehira/go-cli-template/release.yaml?branch=main)
+![GitHub CI Status](https://img.shields.io/github/actions/workflow/status/skanehira/go-cli-template/ci.yaml?branch=main&label=CI)
+![GitHub Release Status](https://img.shields.io/github/actions/workflow/status/skanehira/go-cli-template/release.yaml?branch=main&label=Release)
 
 # go-cli-template
 This template is help you to quick implement some CLI using Go.

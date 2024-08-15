@@ -1,8 +1,8 @@
 module github.com/skanehira/go-cli-template
 
-go 1.22
+go 1.23
 
-toolchain go1.22.0
+toolchain go1.23.0
 
 require github.com/spf13/cobra v1.8.1
 
